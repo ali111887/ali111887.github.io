@@ -8,7 +8,7 @@ pnpm-debug.log*
 # Nuxt.js build / generate output
 .nuxt
 dist
-.output
+#.output
 
 # Nuxt.js devtools
 .nuxt-devtools
