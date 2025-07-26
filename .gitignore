@@ -9,6 +9,8 @@ pnpm-debug.log*
 .nuxt
 dist
 #.output
+.output/*
+!.output/public
 
 # Nuxt.js devtools
 .nuxt-devtools
