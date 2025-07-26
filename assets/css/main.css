@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b-2 border-primary-500 pb-2;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-gray-900/20 p-6 hover:shadow-xl dark:hover:shadow-gray-900/30 transition-all duration-300 border border-gray-100 dark:border-gray-700;
+  }
+  
+  .skill-tag {
+    @apply inline-block bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 px-3 py-1.5 rounded-full text-sm font-medium mr-2 mb-2 transition-all duration-200 hover:bg-primary-200 dark:hover:bg-primary-800/50 hover:scale-105;
+  }
+  
+  .experience-item {
+    @apply border-l-4 border-primary-500 pl-6 pb-6 relative;
+  }
+  
+  .experience-item::before {
+    content: '';
+    @apply absolute left-[-8px] top-0 w-4 h-4 bg-primary-500 rounded-full shadow-lg;
+  }
+  
+  .print-section {
+    @apply break-inside-avoid;
+  }
+  
+  .print-header {
+    @apply print:block hidden print:mb-8;
+  }
+  
+  .print-content {
+    @apply print:grid print:grid-cols-1 print:gap-6;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-sm bg-white/80 dark:bg-gray-800/80 border border-white/20 dark:border-gray-700/20;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .gradient-border {
+    @apply relative;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 opacity-0 transition-opacity duration-200;
+    z-index: -1;
+  }
+  
+  .gradient-border:hover::before {
+    @apply opacity-20;
+  }
+} 
